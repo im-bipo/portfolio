@@ -1,33 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.learn-ring::before {
+  content: "";
+  width: 11rem;
+  height: 4rem;
+  position: absolute;
+  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34% ;
+  border:2px solid yellow;
+  transform: rotate(-5deg);
+  top: 20px;
+  left: -10px;
+}
+.html-text-gradient {
+  background: linear-gradient(to right, #cfcfcf 0%, #00000000 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.preahvihear-regular {
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gradiant-bubble::before,
+.gradiant-bubble::after {
+  content: " ";
+  transform: rotate(-37.233deg);
+  flex-shrink: 0;
+  position: absolute;
+  border-radius: 41% 59% 33% 67% / 54% 36% 64% 46%;
+  background: rgba(129, 44, 238, 0.31);
+  filter: blur(10rem);
+  overflow: hidden;
+}
+.gradiant-bubble::before {
+  top: 10px;
+  left: 200px;
+  width: 20rem;
+  height: 30rem;
+  opacity: 40%;
+}
+.gradiant-bubble::after {
+  bottom: 10px;
+  right: 200px;
+  width: 10rem;
+  height: 15rem;
+  opacity: 60%;
+}
+
+.custom-irregular-border-radius {
+  border-radius: 30% 70% 51% 49% / 30% 70% 51% 49%;
+  animation: change-radius 10s alternate infinite ease;
+}
+
+@keyframes change-radius {
+  0% {
+    border-radius: 30% 70% 51% 49% / 30% 30% 70% 70%;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  25% {
+    border-radius: 47% 53% 42% 58% / 68% 42% 58% 32%;
+  }
+  50% {
+    border-radius: 79% 21% 47% 53% / 48% 64% 36% 52%;
+  }
+  75% {
+    border-radius: 52% 48% 42% 58% / 35% 56% 44% 65%;
+  }
+  100% {
+    border-radius: 65% 35% 62% 38% / 45% 56% 44% 55%;
   }
 }
