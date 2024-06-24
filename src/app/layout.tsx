@@ -5,19 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase : new URL('localhost:3000'),
+  metadataBase: new URL("https://bipinkhatri.com.np"),
   title: "Bipin Khatri",
   description: "Full stack Developer | Freelancer | UI/UX Designer",
   openGraph: {
-    type: "website",
-    title: "Bipin Khatri ",
-    description: "Full stack Developer | Freelancer | UI/UX Designer",
-    siteName: "Bipin Khatri",
-    images: [
-      {
-        url: "og-image.png",
-      },
-    ],
+    images: "og-image.png",
+  },
+  twitter: {
+    images: "og-image.png",
   },
 };
 
