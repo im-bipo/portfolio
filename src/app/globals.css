@@ -3,31 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
-.wrapper {
-  max-width: 1440px;
-  margin-inline: auto;
-}
-
 .learn-ring::before {
   content: "";
   position: absolute;
-  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34%;
-  padding: 2px; /* Same as the border width */
-  background: linear-gradient(180deg, rgba(238,232,44,1) 0%, rgba(0,0,0,0) 90%);;
-
-  /* clip excess color than border */
-  mask:
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-  -webkit-mask:
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-  mask-composite: exclude;
   transform: rotate(-5deg);
   width: 8rem;
   height: 3rem;
   top: 0px;
   left: -10px;
+  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34%;
+  padding: 2px; /* Same as the border width */
+  background: linear-gradient(
+    180deg,
+    rgba(238, 232, 44, 1) 0%,
+    rgba(0, 0, 0, 0) 90%
+  );
+
+  /* clip excess color than border */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: exclude;
 }
 
 @media (min-width: 1124px) {
@@ -77,21 +73,20 @@
   opacity: 100%;
 }
 @media (min-width: 1124px) {
-    .gradiant-bubble::before {
-      top: 10px;
-      left: 200px;
-      width: 20rem;
-      height: 30rem;
-      opacity: 40%;
-    }
-    .gradiant-bubble::after {
-      bottom: 10px;
-      right: 200px;
-      width: 10rem;
-      height: 15rem;
-      opacity: 60%;
-    }
-
+  .gradiant-bubble::before {
+    top: 10px;
+    left: 200px;
+    width: 20rem;
+    height: 30rem;
+    opacity: 40%;
+  }
+  .gradiant-bubble::after {
+    bottom: 10px;
+    right: 200px;
+    width: 10rem;
+    height: 15rem;
+    opacity: 60%;
+  }
 }
 .custom-irregular-border-radius {
   border-radius: 30% 70% 51% 49% / 30% 70% 51% 49%;
