@@ -10,15 +10,35 @@
 
 .learn-ring::before {
   content: "";
-  width: 11rem;
-  height: 4rem;
   position: absolute;
-  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34% ;
-  border:2px solid yellow;
+  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34%;
+  padding: 2px; /* Same as the border width */
+  background: linear-gradient(180deg, rgba(238,232,44,1) 0%, rgba(0,0,0,0) 90%);;
+
+  /* clip excess color than border */
+  mask:
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+  -webkit-mask:
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+  mask-composite: exclude;
   transform: rotate(-5deg);
-  top: 20px;
+  width: 8rem;
+  height: 3rem;
+  top: 0px;
   left: -10px;
 }
+
+@media (min-width: 1124px) {
+  .learn-ring::before {
+    width: 11rem;
+    height: 4rem;
+    top: 20px;
+    left: -10px;
+  }
+}
+
 .html-text-gradient {
   background: linear-gradient(to right, #cfcfcf 0%, #00000000 50%);
   background-clip: text;
@@ -43,20 +63,36 @@
   overflow: hidden;
 }
 .gradiant-bubble::before {
-  top: 10px;
-  left: 200px;
+  top: 0px;
+  left: -5rem;
   width: 20rem;
   height: 30rem;
-  opacity: 40%;
+  opacity: 80%;
 }
 .gradiant-bubble::after {
-  bottom: 10px;
-  right: 200px;
-  width: 10rem;
+  bottom: 0px;
+  right: 0px;
+  width: 15rem;
   height: 15rem;
-  opacity: 60%;
+  opacity: 100%;
 }
+@media (min-width: 1124px) {
+    .gradiant-bubble::before {
+      top: 10px;
+      left: 200px;
+      width: 20rem;
+      height: 30rem;
+      opacity: 40%;
+    }
+    .gradiant-bubble::after {
+      bottom: 10px;
+      right: 200px;
+      width: 10rem;
+      height: 15rem;
+      opacity: 60%;
+    }
 
+}
 .custom-irregular-border-radius {
   border-radius: 30% 70% 51% 49% / 30% 70% 51% 49%;
   animation: change-radius 10s alternate infinite ease;
@@ -77,5 +113,25 @@
   }
   100% {
     border-radius: 65% 35% 62% 38% / 45% 56% 44% 55%;
+  }
+}
+
+.profile-picture::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  margin: auto;
+  transform: translateX(-12rem) rotate(90deg);
+  width: 20rem;
+  height: 20rem;
+  background: url("/Arrow.png") no-repeat;
+}
+@media (min-width: 1124px) {
+  .profile-picture::before {
+    transform: unset;
+    top: 42%;
+    left: -10%;
+    width: 20rem;
+    height: 20rem;
   }
 }
