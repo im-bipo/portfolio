@@ -4,7 +4,7 @@ const page = () => {
   return (
     <>
     {/* <div> */}
-    <div className="flex items-center min-h-[100vh]">
+    <div className="flex items-center">
      <HeroContainer/>
     </div>
     </>

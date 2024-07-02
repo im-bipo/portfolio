@@ -5,7 +5,7 @@ import DotButton from "../ui/DotButton";
 const HeroContainer = () => {
   return (
     <div className="w-full">
-      <main className=" gradiant-bubble lg:grid lg:grid-cols-2 pb-20 lg:min-h-[80vh] relative top-0 left-0 overflow-hidden">
+      <main className=" gradiant-bubble lg:grid lg:grid-cols-2 pb-20 lg:min-h-[100vh] relative top-0 left-0 overflow-hidden">
         <div className="pt-20 lg:pt-0 w-full flex h-full justify-center lg:justify-end items-center">
           <div className="preahvihear-regular w-fit ">
             <h2>Once a Developer Said</h2>
