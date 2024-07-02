@@ -20,7 +20,7 @@ const HeroContainer = () => {
               When you think programming is writing HTML{" "}
             </h4>
             <div className="my-5 flex gap-3">
-              <DotButton link="https://www.linkedin.com/in/bipinkhatri/" />
+              <DotButton text={`Let's Connect`} dot={true} link="https://www.linkedin.com/in/bipinkhatri/" />
             </div>
           </div>
         </div>
