@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.element{
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 500ms;
-  padding-block: 1rem;
-}
+@media (width > 640px) {
+  .element {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+    padding-block: 0.5em;
+  }
 
-.element:hover{
-  grid-template-rows: 1fr;
-}
+  .intro-container:hover .element {
+    grid-template-rows: 1fr;
+  }
 
-.element > div{
-  overflow: hidden;
-  min-height: 3rem;
+  .element > .auto-para {
+    overflow: hidden;
+    min-height: 3rem;
+  }
 }
 
 @layer base {
