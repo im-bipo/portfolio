@@ -9,14 +9,16 @@ export default function Experience() {
           <div className="relative">
             <div className="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-[#3abef9] bg-black" />
             <div className="ml-8">
-              <h2 className="text-[#3abef9] text-xl">QPlay.cz</h2>
+              <h2 className="text-[#3abef9] text-xl">WebRise Solution</h2>
               <h3 className="text-white text-xl font-semibold mb-1">
-                Full-Stack Web Developer
+                Full-Stack Developer
               </h3>
-              <p className="text-gray-400 mb-3">October, 2023 - March, 2024</p>
+              <p className="text-gray-400 mb-3">October, 2023 - Present</p>
               <p className="text-gray-300">
-                Adding features to an already built page. Minor website
-                modifications. The project was ended in March 2024.
+                Designing user-friendly frontends, developing backend
+                functionality, managing databases, and working with designers to
+                create seamless, efficient web applications while solving
+                technical challenges and turning ideas into practical solutions.
               </p>
             </div>
           </div>
