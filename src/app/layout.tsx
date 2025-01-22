@@ -11,9 +11,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bipinkhatri.com.np"),
+  metadataBase: new URL("https://bipo.tech"),
   title: "Bipin Khatri",
-  description: "Full stack Developer | Freelancer | UI/UX Designer",
+  description: "Full stack Developer | App Developer",
   openGraph: {
     images: "og-image.png",
   },
