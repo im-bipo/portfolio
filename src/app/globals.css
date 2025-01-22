@@ -1,156 +1,124 @@
-@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-@keyframes flicker {
-  0% {
-    opacity: 100;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100;
-  }
+.element{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+  padding-block: 1rem;
 }
 
-.flicker {
-  animation: flicker 1.5s ease-in-out alternate infinite;
+.element:hover{
+  grid-template-rows: 1fr;
 }
 
-.child-container {
-  border-radius: calc(3.5rem - 1px);
-}
-
-.learn-ring::before {
-  content: "";
-  position: absolute;
-  transform: rotate(-5deg);
-  width: 8rem;
-  height: 3rem;
-  top: 0px;
-  left: -10px;
-  border-radius: 67% 33% 67% 33% / 66% 30% 70% 34%;
-  padding: 2px; /* Same as the border width */
-  background: linear-gradient(
-    180deg,
-    rgba(238, 232, 44, 1) 0%,
-    rgba(0, 0, 0, 0) 90%
-  );
-}
-
-/* clip excess color than border */
-.clip-excess-color-than-border:before,.clip-excess-color-than-border::after {
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: exclude;
-}
-
-@media (min-width: 1124px) {
-  .learn-ring::before {
-    width: 11rem;
-    height: 4rem;
-    top: 20px;
-    left: -10px;
-  }
-}
-
-.html-text-gradient {
-  background: linear-gradient(to right, #cfcfcf 0%, #00000000 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.preahvihear-regular {
-  font-family: "Preahvihear", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.gradiant-bubble::before,
-.gradiant-bubble::after {
-  z-index: -1;
-  content: " ";
-  transform: rotate(-37.233deg);
-  flex-shrink: 0;
-  position: absolute;
-  border-radius: 41% 59% 33% 67% / 54% 36% 64% 46%;
-  background: rgba(129, 44, 238, 0.31);
-  filter: blur(10rem);
+.element > div{
   overflow: hidden;
-}
-.gradiant-bubble::before {
-  top: 0px;
-  left: -5rem;
-  width: 20rem;
-  height: 30rem;
-  opacity: 80%;
-}
-.gradiant-bubble::after {
-  bottom: 0px;
-  right: 0px;
-  width: 15rem;
-  height: 15rem;
-  opacity: 100%;
-}
-@media (min-width: 1124px) {
-  .gradiant-bubble::before {
-    top: 10px;
-    left: 200px;
-    width: 30rem;
-    height: 35rem;
-    opacity: 40%;
-  }
-  .gradiant-bubble::after {
-    bottom: 50px;
-    right: 100px;
-    width: 15rem;
-    height: 15rem;
-    opacity: 60%;
-  }
-}
-.custom-irregular-border-radius {
-  border-radius: 30% 70% 51% 49% / 30% 70% 51% 49%;
-  animation: change-radius 10s alternate infinite ease;
+  min-height: 3rem;
 }
 
-@keyframes change-radius {
-  0% {
-    border-radius: 30% 70% 51% 49% / 30% 30% 70% 70%;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  25% {
-    border-radius: 47% 53% 42% 58% / 68% 42% 58% 32%;
-  }
-  50% {
-    border-radius: 79% 21% 47% 53% / 48% 64% 36% 52%;
-  }
-  75% {
-    border-radius: 52% 48% 42% 58% / 35% 56% 44% 65%;
-  }
-  100% {
-    border-radius: 65% 35% 62% 38% / 45% 56% 44% 55%;
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-.profile-picture::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  margin: auto;
-  transform: translateX(-12rem) rotate(90deg);
-  width: 20rem;
-  height: 20rem;
-  background: url("/Arrow.png") no-repeat;
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }
-@media (min-width: 1124px) {
-  .profile-picture::before {
-    transform: unset;
-    top: 42%;
-    left: -10%;
-    width: 20rem;
-    height: 20rem;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

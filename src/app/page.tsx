@@ -1,12 +1,18 @@
-import HeroContainer from "@/components/component/Hero";
+import Experience from "@/components/Experience";
+import HeroContainer from "@/components/HeroLander";
+import ProjectCard from "@/components/ProjectCard";
 
 const page = () => {
   return (
     <>
-    {/* <div> */}
-    <div className="flex items-center">
-     <HeroContainer/>
-    </div>
+      <div className="">
+        <HeroContainer />
+        <Experience />
+        <div className="container py-10">
+          <h1 className="text-3xl font-bold mb-8">Projects</h1>
+          <ProjectCard />
+        </div>
+      </div>
     </>
   );
 };
