@@ -20,7 +20,7 @@ const HeroContainer = () => {
                 <h1 className="text-3xl font-bold mt-2 sm:mb-2">
                   Bipin Khatri
                 </h1>
-                <p className="text-gray-400 mb-4">
+                <p className="text-gray-400 mt-2 mb-4 text-[12px]">
                   Full stack Developer • App Developer
                 </p>
               </div>
@@ -50,12 +50,14 @@ const HeroContainer = () => {
             </div>
             <div className="grid transition-[grid-template-rows] duration-1000 ease-in-out element">
               <div className="auto-para">
-                I&apos;m Bipin Khatri, a Full Stack Developer with a focus on
-                React, Next.js, Prisma, Postgres, Tailwind, and Node.js. I enjoy
-                turning creative ideas into functional products while ensuring a
-                great user experience. I&apos;m passionate about both front-end
-                and back-end development and always look for opportunities to
-                learn and grow in the tech field.
+                <p className="text-sm">
+                  I&apos;m Bipin Khatri, a Full Stack Developer with a focus on
+                  React, Next.js, Prisma, Postgres, Tailwind, and Node.js. I
+                  enjoy turning creative ideas into functional products while
+                  ensuring a great user experience. I&apos;m passionate about
+                  both front-end and back-end development and always look for
+                  opportunities to learn and grow in the tech field.
+                </p>
               </div>
             </div>
           </CardContent>

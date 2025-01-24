@@ -14,7 +14,7 @@ export default function Experience() {
                 Full-Stack Developer
               </h3>
               <p className="text-gray-400 mb-3">October, 2023 - Present</p>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-sm">
                 Designing user-friendly frontends, developing backend
                 functionality, managing databases, and working with designers to
                 create seamless, efficient web applications while solving

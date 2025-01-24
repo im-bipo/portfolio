@@ -30,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${poppins.className} dark:bg-[#111111] dark:text-gray-300`}
+        className={`${poppins.className} dark:bg-[#0d1117] dark:text-gray-300`}
       >
-        <nav className="w-full fixed bg-[#18181b]/90 z-10 backdrop-blur-lg py-4 px-2">
+        <nav className="w-full fixed bg-[#010409]/90 z-10 backdrop-blur-lg py-4 px-2">
           <div className="w-full container flex justify-between">
             <div className="flex">
               Bipo

@@ -1,8 +1,8 @@
-import Experience from "@/components/Experience";
-import HeroContainer from "@/components/HeroLander";
-import ProjectCard from "@/components/ProjectCard";
+import Experience from "@/components/custom/Experience";
+import HeroContainer from "@/components/custom/HeroLander";
+import ProjectCard from "@/components/custom/ProjectCard/ProjectCard";
 
-const page = () => {
+const App = () => {
   return (
     <>
       <div className="">
@@ -10,11 +10,15 @@ const page = () => {
         <Experience />
         <div className="container py-10">
           <h1 className="text-3xl font-bold mb-8">Projects</h1>
-          <ProjectCard />
+          <div>
+            <div>
+              <ProjectCard />
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default page;
+export default App;
