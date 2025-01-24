@@ -16,7 +16,7 @@
 
   .element > .auto-para {
     overflow: hidden;
-    min-height: 3rem;
+    min-height: 2.6rem;
   }
 }
 
