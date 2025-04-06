@@ -11,10 +11,10 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { BiLogoLinkedin } from "react-icons/bi";
 const HeroContainer = () => {
   return (
-    <div className="w-full py-10 container">
+    <div className="w-full py-8 md:p-8 container">
       <div className="intro-container">
-        <Card className="bg-inherit/40 backdrop-blur-lg ">
-          <CardContent className="p-8">
+        <Card className="border-0 sm:border bg-inherit/40 backdrop-blur-lg ">
+          <CardContent className="px-0 py-8 sm:p-8">
             <div className="flex flex-col-reverse sm:flex-row justify-between items-start">
               <div>
                 <h1 className="text-3xl font-bold mt-2 sm:mb-2">
@@ -50,7 +50,7 @@ const HeroContainer = () => {
             </div>
             <div className="grid transition-[grid-template-rows] duration-1000 ease-in-out element">
               <div className="auto-para">
-                <p className="text-sm">
+                <p className="text-sm text-justify">
                   I&apos;m Bipin Khatri, a Full Stack Developer with a focus on
                   React, Next.js, Prisma, Postgres, Tailwind, and Node.js. I
                   enjoy turning creative ideas into functional products while
