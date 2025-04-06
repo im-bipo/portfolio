@@ -9,18 +9,13 @@ const config = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
-    screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1124px",
-      xl: "1280px",
-      "2xl": "1400px",
-    },
     container: {
       center: true,
       padding: "1rem",
       screens: {
-        "2xl": "800px",
+        sm: "600px",
+        xl: "800px",
+        "2xl": "900px",
       },
     },
     extend: {

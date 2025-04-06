@@ -4,14 +4,18 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Technology from "@/components/ui/technology";
+import Technology, { tech } from "@/components/ui/technology";
 import AutoScroll from "embla-carousel-auto-scroll";
 import React from "react";
 
-const TechnologyUsed = () => {
+type TechnologyUsedProps = {
+  technologies: (keyof typeof tech)[];
+};
+
+const TechnologyUsed = ({ technologies }: TechnologyUsedProps) => {
   return (
     <Carousel
-      className="my-4"
+      className="my-4 cursor-grab active:cursor-grabbing select-none"
       style={{
         maskImage:
           "linear-gradient(to right, transparent 0%, white 5%, white 95%, transparent 100%)",
@@ -30,30 +34,11 @@ const TechnologyUsed = () => {
       ]}
     >
       <CarouselContent className="">
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="NextJs" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="GraphQL" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="ExpressJs" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="TailwindCss" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="TailwindCss" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="TailwindCss" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="TailwindCss" />
-        </CarouselItem>
-        <CarouselItem className="basis-[unset]">
-          <Technology variant="TailwindCss" />
-        </CarouselItem>
+        {technologies.map((tech, index) => (
+          <CarouselItem key={index} className="basis-[unset]">
+            <Technology variant={tech as keyof typeof TechnologyUsed} />
+          </CarouselItem>
+        ))}
       </CarouselContent>
     </Carousel>
   );

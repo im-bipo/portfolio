@@ -35,7 +35,26 @@ export default function Component() {
             </p>
           </div>
           <div className="w-[100%]">
-            <TechnologyUsed />
+            <TechnologyUsed
+              technologies={[
+                "NextJs",
+                "ReactJs",
+                "TailwindCss",
+                "NodeJs",
+                "PostgreSQL",
+                "Supabase",
+                "Gemini",
+                "Pinecone",
+                "NextJs",
+                "ReactJs",
+                "TailwindCss",
+                "NodeJs",
+                "PostgreSQL",
+                "Supabase",
+                "Gemini",
+                "Pinecone",
+              ]}
+            />
           </div>
         </div>
       </div>
