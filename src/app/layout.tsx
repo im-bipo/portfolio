@@ -40,9 +40,9 @@ export default function RootLayout({
             </div>
             <div>
               <ul className="flex gap-2">
-                <li>Home</li>
+                {/* <li>Home</li>
                 <li>Work</li>
-                <li>Projects</li>
+                <li>Projects</li> */}
               </ul>
             </div>
           </div>
