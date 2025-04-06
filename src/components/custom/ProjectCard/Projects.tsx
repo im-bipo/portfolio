@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import TechnologyUsed from "./TechnologyUsed";
@@ -11,7 +11,7 @@ import { tech } from "@/components/ui/technology";
 type ProjectTypes = {
   title: string;
   description: string;
-  github: string;
+  github?: string;
   live?: string;
   technologies: (keyof typeof tech)[];
 };
@@ -21,7 +21,6 @@ const Projects: ProjectTypes[] = [
     title: "Bhandari Bros",
     description:
       "An online recruitment platform allowing companies to post jobs and users to apply. Built with authentication, file upload, and dashboard features.",
-    github: "https://github.com/bipinkhatri/bhandari-bros",
     live: "https://bhandaribros.com/",
     technologies: ["NextJs", "TailwindCss", "Appwrite"],
   },
@@ -29,8 +28,8 @@ const Projects: ProjectTypes[] = [
   {
     title: "InnovateX Website",
     description:
-      "The official website for CSITABMC featuring events, resources, and announcements for IT students.",
-    github: "https://github.com/bipinkhatri/csitabmc-website",
+      "BMC InnovateX is a 48-hour national level hackathon, presented by Butwal Multiple Campus and organized by CSIT Association of BMC",
+    github: "https://github.com/CSIT-Association-of-BMC/BMC_InnovateX",
     live: "https://innovatex.csitabmc.com/",
     technologies: ["NextJs", "Supabase", "TailwindCss", "Prisma", "PostgreSQL"],
   },
@@ -55,7 +54,7 @@ const Projects: ProjectTypes[] = [
     title: "CSITABMC Official Website",
     description:
       "The official website for CSITABMC featuring events, resources, and announcements for IT students.",
-    github: "https://github.com/bipinkhatri/csitabmc-website",
+    github: "https://github.com/CSIT-Association-of-BMC/csitabmcweb",
     live: "https://csitabmc.com/",
     technologies: ["NextJs", "NodeJs", "TailwindCss", "Prisma", "PostgreSQL"],
   },
@@ -63,7 +62,7 @@ const Projects: ProjectTypes[] = [
     title: "Bipo's Notes",
     description:
       "A note-sharing platform with science resources for grades 11 and 12. Lightweight, fast, and useful for exam prep.",
-    github: "https://github.com/im-bipo",
+    github: "https://github.com/im-bipo/biposNotes",
     live: "https://bipos-notes.vercel.app/",
     technologies: ["HTML", "CSS", "JavaScript"],
   },
@@ -71,7 +70,7 @@ const Projects: ProjectTypes[] = [
     title: "Nep Express",
     description:
       "A tourist guide destination web app that recommends tourist spots within a 4km radius of the user's route between two destinations. Built using geocoding APIs and PostgreSQL.",
-    github: "https://github.com/bipinkhatri/nep-express",
+    github: "https://github.com/im-bipo/nep-express",
     technologies: [
       "NextJs",
       "ReactJs",
@@ -130,12 +129,21 @@ export default async function OtherProjects() {
                         </Link>
                       </Button>
                     )}
-                    <Button variant="ghost" size="sm" asChild>
-                      <Link href={project.github} target="_blank">
-                        <Github className="w-4 h-4 mr-2" />
-                        View Code
-                      </Link>
-                    </Button>
+                    {project.github ? (
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link href={project.github} target="_blank">
+                          <Github className="w-4 h-4 mr-2" />
+                          View Code
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button variant="ghost" size="sm" asChild disabled>
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <Lock className="w-4 h-4 mr-2" />
+                          Private Repo
+                        </div>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>
