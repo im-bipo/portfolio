@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 
 import "./globals.css";
 import { Terminal } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
           </div>
         </nav>
         <main className="pt-10">{children}</main>
+        <Footer />
       </body>
     </html>
   );
