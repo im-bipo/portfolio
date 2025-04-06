@@ -24,6 +24,7 @@ const TechnologyUsed = ({ technologies }: TechnologyUsedProps) => {
       }}
       opts={{
         loop: true,
+        dragFree: true,
       }}
       plugins={[
         AutoScroll({
