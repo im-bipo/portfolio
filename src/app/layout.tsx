@@ -5,6 +5,9 @@ import "./globals.css";
 import { Terminal } from "lucide-react";
 import Footer from "@/components/Footer";
 
+import GoogleAnalytics from "@/components/custom/GoogleAnalytics";
+import MicrosoftClarity from "@/components/custom/MicrosoftClarity";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -30,6 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <GoogleAnalytics />
+        <MicrosoftClarity />
+      </head>
       <body
         className={`${poppins.className} dark:bg-[#0d1117] dark:text-gray-300`}
       >
