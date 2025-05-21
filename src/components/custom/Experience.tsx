@@ -11,7 +11,7 @@ export default function Experience() {
             <div className="ml-8">
               <h2 className="text-[#3abef9] text-xl">WebRise Solution</h2>
               <h3 className="text-white text-xl font-semibold mb-1">
-                Full-Stack Developer
+                Full-Stack Developer | Part-Time
               </h3>
               <p className="text-gray-400 mb-3">October, 2023 - Present</p>
               <p className="text-gray-300 text-sm">
