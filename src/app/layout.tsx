@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 
 import GoogleAnalytics from "@/components/custom/GoogleAnalytics";
 import MicrosoftClarity from "@/components/custom/MicrosoftClarity";
+import Theme from "@/components/custom/Theme";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <GoogleAnalytics />
         <MicrosoftClarity />
@@ -40,19 +41,13 @@ export default function RootLayout({
       <body
         className={`${poppins.className} dark:bg-[#0d1117] dark:text-gray-300`}
       >
-        <nav className="w-full fixed bg-[#010409]/90 z-10 backdrop-blur-lg py-4 px-2">
+        <nav className="w-full fixed bg-gray-100/80 dark:bg-[#010409]/80 z-10 backdrop-blur-lg py-4 px-2">
           <div className="w-full container flex justify-between">
             <div className="flex">
               Bipo
               <Terminal />
             </div>
-            <div>
-              <ul className="flex gap-2">
-                {/* <li>Home</li>
-                <li>Work</li>
-                <li>Projects</li> */}
-              </ul>
-            </div>
+            <Theme />
           </div>
         </nav>
         <main className="pt-10">{children}</main>

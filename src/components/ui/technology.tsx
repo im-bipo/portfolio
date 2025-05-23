@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   // Frontend
   Code2 as NextJsIcon,
@@ -301,10 +301,49 @@ type TechnologyProps = {
   mode?: "light" | "dark";
 };
 
-const Technology = ({ variant, className, mode = "dark" }: TechnologyProps) => {
-  const { icon: Icon, lightColor, darkColor, title } = tech[variant];
-  const color = mode === "light" ? lightColor : darkColor;
+const Technology = ({ variant, className }: TechnologyProps) => {
+  const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    // Ensure this runs only on the client side
+    if (typeof window !== "undefined") {
+      const theme = localStorage.getItem("theme");
+      if (theme) {
+        if (theme === "dark") {
+          setDarkMode(true);
+        } else if (theme === "light") {
+          setDarkMode(false);
+        } else if (theme === "system") {
+          const isDarkMode = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+
+          if (isDarkMode) {
+            setDarkMode(true);
+          } else {
+            setDarkMode(false);
+          }
+        }
+      }
+
+      // Check the initial dark mode state
+      const updateDarkMode = () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setDarkMode(isDark);
+      };
+
+      // Listen for changes to the dark mode class
+      const observer = new MutationObserver(updateDarkMode);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  const { icon: Icon, lightColor, darkColor, title } = tech[variant];
+  const color = darkMode ? darkColor : lightColor;
   return (
     <div
       className={`flex items-center gap-2 ${className} grayscale-[40%]`}
