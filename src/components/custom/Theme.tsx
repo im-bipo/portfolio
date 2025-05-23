@@ -13,7 +13,7 @@ import { Button } from "../ui/button";
 import { Computer, Moon, Sun, SunDimIcon, SunIcon } from "lucide-react";
 
 const Theme = () => {
-  const [currentTheme, setCurrentTheme] = React.useState("Light");
+  const [currentTheme, setCurrentTheme] = React.useState("system");
 
   // Check for the theme in local storage and set it on initial load
   React.useEffect(() => {
@@ -35,6 +35,8 @@ const Theme = () => {
           document.documentElement.classList.remove("dark");
         }
       }
+    } else {
+      localStorage.setItem("theme", "system");
     }
   }, []);
 

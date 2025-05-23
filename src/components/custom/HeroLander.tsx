@@ -11,9 +11,9 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { BiLogoLinkedin } from "react-icons/bi";
 const HeroContainer = () => {
   return (
-    <div className="w-full py-8 md:p-8 container">
+    <div className="w-full px-0 pt-4 md:py-8 md:px-4 container ">
       <div className="intro-container">
-        <Card className="border-0 sm:border bg-inherit/40 group backdrop-blur-lg shadow-none dark:bg-[#010409]/40 dark:border-0">
+        <Card className="border-0 px-4 sm:border bg-inherit/40 group backdrop-blur-lg shadow-none dark:bg-[#010409]/40 dark:border-0">
           <CardContent className="px-0 py-8 sm:p-8">
             <div className="flex flex-col-reverse sm:flex-row justify-between items-start">
               <div>

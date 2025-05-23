@@ -7,7 +7,7 @@ import { PinIcon } from "lucide-react";
 const App = () => {
   return (
     <>
-      <div className="">
+      <div>
         <HeroContainer />
         <Experience />
         <div className="container my-10  border-b-2 border-zinc-800 py-10">
