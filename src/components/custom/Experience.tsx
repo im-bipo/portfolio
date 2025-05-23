@@ -9,12 +9,16 @@ export default function Experience() {
           <div className="relative">
             <div className="absolute left-0 top-2 h-4 w-4 rounded-full border-2 border-[#3abef9] bg-black" />
             <div className="ml-8">
-              <h2 className="text-[#3abef9] text-xl">WebRise Solution</h2>
-              <h3 className="text-white text-xl font-semibold mb-1">
-                Full-Stack Developer
+              <h2 className="text-[#3abef9] font-semibold text-xl">
+                WebRise Solution
+              </h2>
+              <h3 className="text-gray-700 dark:text-white  font-medium mb-1">
+                Full-Stack Developer • Part-Time
               </h3>
-              <p className="text-gray-400 mb-3">October, 2023 - Present</p>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 mb-3">
+                October, 2023 - Present
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Designing user-friendly frontends, developing backend
                 functionality, managing databases, and working with designers to
                 create seamless, efficient web applications while solving

@@ -91,20 +91,22 @@ export default async function OtherProjects() {
         {Projects.map(async (project, index) => {
           const siteImage = await getSiteImage(project.live);
           return (
-            <Card key={index} className="bg-zinc-900 overflow-hidden">
+            <Card
+              key={index}
+              className="bg-gray-100 group dark:bg-zinc-900 overflow-hidden"
+            >
               <div className="relative aspect-video">
                 <img
                   src={siteImage !== "" ? siteImage : defaultImage}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent" />
               </div>
               <CardContent className="p-4">
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-4">
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                   {project.description}
                 </p>
                 <div className="mb-4">
@@ -122,7 +124,12 @@ export default async function OtherProjects() {
                 <div className="relative border-t border-zinc-800 pt-4">
                   <div className="flex justify-start gap-2">
                     {project.live && (
-                      <Button variant="ghost" size="sm" asChild>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        className="group-hover:bg-accent duration-300"
+                      >
                         <Link href={project.live} target="_blank">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           View Live
